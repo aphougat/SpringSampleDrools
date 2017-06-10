@@ -1,0 +1,8 @@
+import com.itembryo.drools.spring.dto.Category;
+import com.itembryo.drools.spring.dto.Item;
+dialect  "mvel"
+
+rule "rules"
+    when $i : Item( cost < 200)
+    then $i.setCategory(Category.LOW_VALUE);
+end
